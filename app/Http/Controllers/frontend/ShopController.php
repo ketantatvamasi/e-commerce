@@ -58,7 +58,7 @@ class ShopController extends Controller
             ->leftJoin("categories as c", "c.id", "=", "woman_products.category_id")
             ->leftJoin("categories as sc", "sc.id", "=", "woman_products.subcategory_id")
             ->leftJoin("woman_product_images as p", "p.product_id", "=", "woman_products.id")->groupby('woman_products.id')
-            ->get();
+            ->paginate(8);
         return $product;
     }
     public function getProduct(){

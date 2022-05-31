@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
     <!-- Custom Style CSS -->
     <link rel="stylesheet" href="{{asset('assets/frontend/css/style.css')}}">
+    {{--@stack('scripts')--}}
     @stack('css')
     <style>
         .subMenu{
@@ -60,6 +61,72 @@
             top: 0;
             left: 100%;
             width: 100%;
+        }
+        /* Mobile Devices */
+        @media (max-width: 480px) {
+            .header__sub--menu{
+                top:150%;
+                left:-245%;
+            }
+            .headerMenu{
+                margin-right: 7px;
+            }
+            .headerMenu2{
+                margin-right: 7px!important;
+                margin-top: -1px!important;
+            }
+            .product{
+                padding-bottom: 0!important;
+            }
+            .features{
+                padding-top: 0!important;
+            }
+        }
+
+        /* Low resolution Tablets and iPads */
+        @media (min-width: 481px) and (max-width: 767px) {
+            .headerMenu2{
+                margin-right: 7px!important;
+                margin-top: -1px!important;
+            }
+        }
+
+        /* Tablets iPads (Portrait) */
+        @media (min-width: 768px) and (max-width: 1024px){
+            .headerMenu2{
+                margin-right: 7px!important;
+                margin-top: -1px!important;
+            }
+            .hearderSubMenu{
+                top:128%;
+                left:-335%;
+            }
+            .headerMenu {
+                margin-right: 2rem;
+                position: relative;
+            }
+        }
+
+        /* Laptops and Desktops */
+        @media (min-width: 1025px) and (max-width: 1280px){
+            .header__sub--menu{
+                top:128%;
+                left:-8%;
+            }
+            .headerMenu{
+                margin-right: 2.5rem;
+            }
+        }
+
+        /* Big boi Monitors */
+        @media (min-width: 1281px) {
+            .header__sub--menu{
+                top:128%;
+                left:-8%;
+            }
+            .headerMenu{
+                margin-right: 2.5rem;
+            }
         }
     </style>
 </head>

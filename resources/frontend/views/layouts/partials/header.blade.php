@@ -6,10 +6,10 @@
                 <div class="header__shipping">
                     <ul class="header__shipping--wrapper d-flex">
                         <li class="header__shipping--text text-white">Welcome to Netmark online Store</li>
-                        <li class="header__shipping--text text-white d-sm-2-none"><img
-                                class="header__shipping--text__icon" src="{{asset('assets/frontend/img/icon/bus.png')}}"
-                                alt="bus-icon"> Track Your Order
-                        </li>
+{{--                        <li class="header__shipping--text text-white d-sm-2-none"><img--}}
+{{--                                class="header__shipping--text__icon" src="{{asset('assets/frontend/img/icon/bus.png')}}"--}}
+{{--                                alt="bus-icon"> Track Your Order--}}
+{{--                        </li>--}}
 {{--                        <li class="header__shipping--text text-white d-sm-2-none"><img--}}
 {{--                                class="header__shipping--text__icon"--}}
 {{--                                src="{{asset('assets/frontend/img/icon/email.png')}}" alt="email-icon"> <a--}}
@@ -19,39 +19,6 @@
                 </div>
                 <div class="language__currency d-none d-lg-block">
                     <ul class="d-flex align-items-center">
-                        <li class="language__currency--list">
-                            <a class="language__switcher text-white" href="#">
-                                <img class="language__switcher--icon__img" src="{{asset('assets/frontend/img/icon/language-icon.png')}}" alt="currency">
-                                <span>English</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="11.797" height="9.05" viewBox="0 0 9.797 6.05">
-                                    <path d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
-                                </svg>
-                            </a>
-                            <div class="dropdown__language">
-                                <ul>
-                                    <li class="language__items"><a class="language__text" href="#">France</a></li>
-                                    <li class="language__items"><a class="language__text" href="#">Russia</a></li>
-                                    <li class="language__items"><a class="language__text" href="#">Spanish</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="language__currency--list">
-                            <a class="account__currency--link text-white" href="#">
-                                <img src="{{asset('assets/frontend/img/icon/usd-icon.png')}}" alt="currency">
-                                <span>$ US Dollar</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="11.797" height="9.05" viewBox="0 0 9.797 6.05">
-                                    <path d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
-                                </svg>
-                            </a>
-                            <div class="dropdown__currency">
-                                <ul>
-                                    <li class="currency__items"><a class="currency__text" href="javascript:void(0)">CAD</a></li>
-                                    <li class="currency__items"><a class="currency__text" href="#">CNY</a></li>
-                                    <li class="currency__items"><a class="currency__text" href="#">EUR</a></li>
-                                    <li class="currency__items"><a class="currency__text" href="#">GBP</a></li>
-                                </ul>
-                            </div>
-                        </li>
                         @if (Auth::check())
                         <li class="language__currency--list">
                             <a class="account__currency--link text-white">Hello, {{Auth::user()->name}}</a>
@@ -103,7 +70,7 @@
                 </div>
                 <div class="header__account header__sticky--none">
                     <ul class="d-flex">
-                        <li class="header__menu--items" style="margin-right: 2.5rem!important;">
+                        <li class="header__menu--items headerMenu">
 {{--                        <li class="header__account--items">--}}
                             <a class="header__account--btn" href="#">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="26.51" height="23.443"
@@ -113,7 +80,7 @@
                                 </svg>
                                 <span class="header__account--btn__text">My Account</span>
                             </a>
-                            <ul class="header__sub--menu" style="top:128%!important; left: -8%!important;">
+                            <ul class="header__sub--menu">
                                 <li class="header__sub--menu__items"><a href="javascript:void(0)" class="header__sub--menu__link">Your Account</a></li>
                                 <li class="header__sub--menu__items"><a href="{{route('orderList')}}" class="header__sub--menu__link">Your Order</a></li>
                                 <li class="header__sub--menu__items">
@@ -134,7 +101,7 @@
                                     <path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
                                 </svg>
                                 <span class="header__account--btn__text"> Wish List</span>
-                                <span class="items__count wishlist">02</span>
+                                <span class="items__count wishlist">{{ count((array) session('wishlist'))}}</span>
                             </a>
                         </li>
                         <li class="header__account--items">
@@ -162,12 +129,12 @@
                             <li class="header__menu--items style2">
                                 <a class="header__menu--link text-white" href="{{route('dashboard')}}">Home</a>
                             </li>
+{{--                            <li class="header__menu--items mega__menu--items style2">--}}
+{{--                                <a class="header__menu--link text-white" href="{{route('shop')}}">Shop--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
                             <li class="header__menu--items mega__menu--items style2">
-                                <a class="header__menu--link text-white" href="{{route('shop')}}">Shop
-                                </a>
-                            </li>
-                            <li class="header__menu--items mega__menu--items style2">
-                                <a class="header__menu--link text-white" href="{{route('shop2')}}">Shop 2
+                                <a class="header__menu--link text-white" href="{{route('shop2')}}">Shop
                                 </a>
                             </li>
                             @if (Auth::check())
@@ -214,7 +181,7 @@
                                 <span class="visually-hidden">Search</span>
                             </a>
                         </li>
-                        <li class="header__menu--items header__account--items header__account2--items">
+                        <li class="header__menu--items header__account--items header__account2--items headerMenu2">
                             <a class="header__account--btn" href="javascript:void(0)">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="26.51" height="23.443"
                                      viewBox="0 0 512 512">
@@ -223,7 +190,7 @@
                                 </svg>
                                 <span class="visually-hidden">My Account</span>
                             </a>
-                            <ul class="header__sub--menu" style="top: 150%!important;left: -17%!important;width: 145px!important;">
+                            <ul class="header__sub--menu hearderSubMenu">
                                 <li class="header__sub--menu__items"><a href="javascript:void(0)" class="header__sub--menu__link">Your Account</a></li>
                                 <li class="header__sub--menu__items"><a href="{{route('orderList')}}" class="header__sub--menu__link">Your Order</a></li>
                                 <li class="header__sub--menu__items">
@@ -243,7 +210,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="28.51" height="23.443" viewBox="0 0 512 512">
                                     <path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
                                 </svg>
-                                <span class="items__count  wishlist style2">02</span>
+                                <span class="items__count  wishlist style2">{{ count((array) session('wishlist'))}}</span>
                             </a>
                         </li>
                         <li class="header__account--items header__account2--items">
@@ -275,12 +242,12 @@
                             <li class="header__menu--items">
                                 <a class="header__menu--link text-white" href="{{route('dashboard')}}">Home</a>
                             </li>
+{{--                            <li class="header__menu--items mega__menu--items">--}}
+{{--                                <a class="header__menu--link text-white" href="{{route('shop')}}">Shop--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
                             <li class="header__menu--items mega__menu--items">
-                                <a class="header__menu--link text-white" href="{{route('shop')}}">Shop
-                                </a>
-                            </li>
-                            <li class="header__menu--items mega__menu--items">
-                                <a class="header__menu--link text-white" href="{{route('shop2')}}">Shop 2
+                                <a class="header__menu--link text-white" href="{{route('shop2')}}">Shop
                                 </a>
                             </li>
                             @if (Auth::check())
@@ -346,11 +313,11 @@
                         <a class="offcanvas__menu_item" href="{{route('dashboard')}}">Home</a>
                     </li>
                     <li class="offcanvas__menu_li">
-                        <a class="offcanvas__menu_item" href="{{route('shop')}}">Shop</a>
+                        <a class="offcanvas__menu_item" href="{{route('shop2')}}">Shop</a>
                     </li>
-                    <li class="offcanvas__menu_li">
-                        <a class="offcanvas__menu_item" href="{{route('shop2')}}">Shop2</a>
-                    </li>
+{{--                    <li class="offcanvas__menu_li">--}}
+{{--                        <a class="offcanvas__menu_item" href="{{route('shop2')}}">Shop2</a>--}}
+{{--                    </li>--}}
                     <li class="offcanvas__menu_li"><a class="offcanvas__menu_item" href="javascript:void(0)">About</a></li>
                     <li class="offcanvas__menu_li"><a class="offcanvas__menu_item" href="javascript:void(0)">Contact</a></li>
                 </ul>
@@ -413,7 +380,7 @@
                 </a>
             </li>
             <li class="offcanvas__stikcy--toolbar__list">
-                <a class="offcanvas__stikcy--toolbar__btn" href="{{route('shop')}}">
+                <a class="offcanvas__stikcy--toolbar__btn" href="{{route('shop2')}}">
                     <span class="offcanvas__stikcy--toolbar__icon">
                         <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" width="18.51" height="17.443"
                              viewBox="0 0 448 512"><path
@@ -435,6 +402,20 @@
                 </a>
             </li>
             <li class="offcanvas__stikcy--toolbar__list">
+                <a class="offcanvas__stikcy--toolbar__btn" href="{{route('wishlist')}}">
+                        <span class="offcanvas__stikcy--toolbar__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18.541" height="15.557"
+                                 viewBox="0 0 18.541 15.557">
+                            <path
+                                d="M71.775,135.51a5.153,5.153,0,0,1,1.267-1.524,4.986,4.986,0,0,1,6.584.358,4.728,4.728,0,0,1,1.174,4.914,10.458,10.458,0,0,1-2.132,3.808,22.591,22.591,0,0,1-5.4,4.558c-.445.282-.9.549-1.356.812a.306.306,0,0,1-.254.013,25.491,25.491,0,0,1-6.279-4.8,11.648,11.648,0,0,1-2.52-4.009,4.957,4.957,0,0,1,.028-3.787,4.629,4.629,0,0,1,3.744-2.863,4.782,4.782,0,0,1,5.086,2.447c.013.019.025.034.057.076Z"
+                                transform="translate(-62.498 -132.915)" fill="currentColor"/>
+                            </svg>
+                        </span>
+                    <span class="offcanvas__stikcy--toolbar__label">Wishlist</span>
+                    <span class="items__count">{{ count((array) session('wishlist'))}}</span>
+                </a>
+            </li>
+            <li class="offcanvas__stikcy--toolbar__list">
                 <a class="offcanvas__stikcy--toolbar__btn minicart__open--btn" href="javascript:void(0)" data-offcanvas>
                         <span class="offcanvas__stikcy--toolbar__icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18.51" height="15.443"
@@ -448,20 +429,6 @@
                     <span class="items__count">{{ count((array) session('cart'))+ count((array) session('cart2'))}}</span>
                 </a>
             </li>
-{{--            <li class="offcanvas__stikcy--toolbar__list">--}}
-{{--                <a class="offcanvas__stikcy--toolbar__btn" href="javascript:void(0)">--}}
-{{--                        <span class="offcanvas__stikcy--toolbar__icon">--}}
-{{--                            <svg xmlns="http://www.w3.org/2000/svg" width="18.541" height="15.557"--}}
-{{--                                 viewBox="0 0 18.541 15.557">--}}
-{{--                            <path--}}
-{{--                                d="M71.775,135.51a5.153,5.153,0,0,1,1.267-1.524,4.986,4.986,0,0,1,6.584.358,4.728,4.728,0,0,1,1.174,4.914,10.458,10.458,0,0,1-2.132,3.808,22.591,22.591,0,0,1-5.4,4.558c-.445.282-.9.549-1.356.812a.306.306,0,0,1-.254.013,25.491,25.491,0,0,1-6.279-4.8,11.648,11.648,0,0,1-2.52-4.009,4.957,4.957,0,0,1,.028-3.787,4.629,4.629,0,0,1,3.744-2.863,4.782,4.782,0,0,1,5.086,2.447c.013.019.025.034.057.076Z"--}}
-{{--                                transform="translate(-62.498 -132.915)" fill="currentColor"/>--}}
-{{--                            </svg>--}}
-{{--                        </span>--}}
-{{--                    <span class="offcanvas__stikcy--toolbar__label">Wishlist</span>--}}
-{{--                    <span class="items__count">3</span>--}}
-{{--                </a>--}}
-{{--            </li>--}}
         </ul>
     </div>
     <!-- End Offcanvas stikcy toolbar -->

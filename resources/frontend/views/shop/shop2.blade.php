@@ -93,13 +93,14 @@
                                         <div class="row row-cols-xl-4 row-cols-lg-3 row-cols-md-3 row-cols-2 mb--n30">
                                             @foreach($product as $value)
                                                 <div class="col mb-30">
-                                                    <div class="product__items ">
+                                                    <div class="id" data-id="{{ $value['id'] }}">
+                                                        <div class="product__items ">
                                                         <div class="product__items--thumbnail">
                                                             @php
                                                                 $img = explode(",",$value['image_name']);
                                                                 $n = count($img);
                                                             @endphp
-                                                            <a class="product__items--link" href="{{url('productDetails/'.$value['id'])}}">
+                                                            <a class="product__items--link productDetails" href="{{url('productDetails/'.$value['id'])}}">
                                                                 @for($i=0; $i<$n; $i++)
                                                                     @if($i==0)
                                                                         <img class="product__items--img product__primary--img" src="{{asset('images/'.$img[$i])}}" alt="product-img">
@@ -123,39 +124,39 @@
                                                             </div>
                                                             <ul class="rating product__rating d-flex">
                                                                 <li class="rating__list">
-                                                                <span class="rating__list--icon">
-                                                                    <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="14.105" height="14.732" viewBox="0 0 10.105 9.732">
-                                                                    <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
-                                                                    </svg>
-                                                                </span>
+                                                                    <span class="rating__list--icon">
+                                                                        <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="14.105" height="14.732" viewBox="0 0 10.105 9.732">
+                                                                        <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
+                                                                        </svg>
+                                                                    </span>
                                                                 </li>
                                                                 <li class="rating__list">
-                                                                <span class="rating__list--icon">
-                                                                    <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="14.105" height="14.732" viewBox="0 0 10.105 9.732">
-                                                                    <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
-                                                                    </svg>
-                                                                </span>
+                                                                    <span class="rating__list--icon">
+                                                                        <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="14.105" height="14.732" viewBox="0 0 10.105 9.732">
+                                                                        <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
+                                                                        </svg>
+                                                                    </span>
                                                                 </li>
                                                                 <li class="rating__list">
-                                                                <span class="rating__list--icon">
-                                                                    <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="14.105" height="14.732" viewBox="0 0 10.105 9.732">
-                                                                    <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
-                                                                    </svg>
-                                                                </span>
+                                                                    <span class="rating__list--icon">
+                                                                        <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="14.105" height="14.732" viewBox="0 0 10.105 9.732">
+                                                                        <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
+                                                                        </svg>
+                                                                    </span>
                                                                 </li>
                                                                 <li class="rating__list">
-                                                                <span class="rating__list--icon">
-                                                                    <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="14.105" height="14.732" viewBox="0 0 10.105 9.732">
-                                                                    <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
-                                                                    </svg>
-                                                                </span>
+                                                                    <span class="rating__list--icon">
+                                                                        <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="14.105" height="14.732" viewBox="0 0 10.105 9.732">
+                                                                        <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
+                                                                        </svg>
+                                                                    </span>
                                                                 </li>
                                                                 <li class="rating__list">
-                                                                <span class="rating__list--icon">
-                                                                    <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="14.105" height="14.732" viewBox="0 0 10.105 9.732">
-                                                                    <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
-                                                                    </svg>
-                                                                </span>
+                                                                    <span class="rating__list--icon">
+                                                                        <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="14.105" height="14.732" viewBox="0 0 10.105 9.732">
+                                                                        <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
+                                                                        </svg>
+                                                                    </span>
                                                                 </li>
                                                             </ul>
                                                             {{--                                                            {{url('cart')}}/{{$value['id']}}--}}
@@ -174,8 +175,21 @@
                                                                         <span class="add__to--cart__text"> + Add to cart</span>
                                                                     </a>
                                                                 </li>
+                                                                <li class="product__items--action__list">
+                                                                    <a class="product__items--action__btn" href="{{ route('add.to.wishlist', $value['id']) }}">
+                                                                        <svg class="product__items--action__btn--svg" xmlns="http://www.w3.org/2000/svg" width="25.51" height="23.443" viewBox="0 0 512 512"><path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path></svg>
+                                                                        <span class="visually-hidden">Wishlist</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="product__items--action__list">
+                                                                    <a class="product__items--action__btn productview"  href="javascript:void(0)">
+                                                                        <svg class="product__items--action__btn--svg" xmlns="http://www.w3.org/2000/svg" width="25.51" height="23.443" viewBox="0 0 512 512"><path d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path><circle cx="256" cy="256" r="80" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></circle></svg>
+                                                                        <span class="visually-hidden">Quick View</span>
+                                                                    </a>
+                                                                </li>
                                                             </ul>
                                                         </div>
+                                                    </div>
                                                     </div>
                                                 </div>
                                             @endforeach
@@ -187,7 +201,8 @@
                                         <div class="row row-cols-1 mb--n30">
                                             @foreach($product as $value)
                                                 <div class="col mb-30">
-                                                    <div class="product__items product__list--items d-flex">
+                                                    <div class="id" data-id="{{ $value['id'] }}">
+                                                        <div class="product__items product__list--items d-flex">
                                                         <div class="product__items--thumbnail product__list--items__thumbnail">
                                                             @php
                                                                 $img = explode(",",$value['image_name']);
@@ -217,39 +232,39 @@
                                                             </div>
                                                             <ul class="rating product__rating d-flex">
                                                                 <li class="rating__list">
-                                                                <span class="rating__list--icon">
-                                                                    <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="14.105" height="14.732" viewBox="0 0 10.105 9.732">
-                                                                    <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
-                                                                    </svg>
-                                                                </span>
+                                                                    <span class="rating__list--icon">
+                                                                        <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="14.105" height="14.732" viewBox="0 0 10.105 9.732">
+                                                                        <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
+                                                                        </svg>
+                                                                    </span>
                                                                 </li>
                                                                 <li class="rating__list">
-                                                                <span class="rating__list--icon">
-                                                                    <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="14.105" height="14.732" viewBox="0 0 10.105 9.732">
-                                                                    <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
-                                                                    </svg>
-                                                                </span>
+                                                                    <span class="rating__list--icon">
+                                                                        <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="14.105" height="14.732" viewBox="0 0 10.105 9.732">
+                                                                        <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
+                                                                        </svg>
+                                                                    </span>
                                                                 </li>
                                                                 <li class="rating__list">
-                                                                <span class="rating__list--icon">
-                                                                    <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="14.105" height="14.732" viewBox="0 0 10.105 9.732">
-                                                                    <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
-                                                                    </svg>
-                                                                </span>
+                                                                    <span class="rating__list--icon">
+                                                                        <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="14.105" height="14.732" viewBox="0 0 10.105 9.732">
+                                                                        <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
+                                                                        </svg>
+                                                                    </span>
                                                                 </li>
                                                                 <li class="rating__list">
-                                                                <span class="rating__list--icon">
-                                                                    <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="14.105" height="14.732" viewBox="0 0 10.105 9.732">
-                                                                    <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
-                                                                    </svg>
-                                                                </span>
+                                                                    <span class="rating__list--icon">
+                                                                        <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="14.105" height="14.732" viewBox="0 0 10.105 9.732">
+                                                                        <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
+                                                                        </svg>
+                                                                    </span>
                                                                 </li>
                                                                 <li class="rating__list">
-                                                                <span class="rating__list--icon">
-                                                                    <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="14.105" height="14.732" viewBox="0 0 10.105 9.732">
-                                                                    <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
-                                                                    </svg>
-                                                                </span>
+                                                                    <span class="rating__list--icon">
+                                                                        <svg class="rating__list--icon__svg" xmlns="http://www.w3.org/2000/svg" width="14.105" height="14.732" viewBox="0 0 10.105 9.732">
+                                                                        <path data-name="star - Copy" d="M9.837,3.5,6.73,3.039,5.338.179a.335.335,0,0,0-.571,0L3.375,3.039.268,3.5a.3.3,0,0,0-.178.514L2.347,6.242,1.813,9.4a.314.314,0,0,0,.464.316L5.052,8.232,7.827,9.712A.314.314,0,0,0,8.292,9.4L7.758,6.242l2.257-2.231A.3.3,0,0,0,9.837,3.5Z" transform="translate(0 -0.018)" fill="currentColor"></path>
+                                                                        </svg>
+                                                                    </span>
                                                                 </li>
                                                             </ul>
                                                             <p class="product__list--items__content--desc d-xl-none mb-15">{{$value['decription']}}</p>
@@ -268,8 +283,21 @@
                                                                         <span class="add__to--cart__text"> + Add to cart</span>
                                                                     </a>
                                                                 </li>
+                                                                <li class="product__items--action__list">
+                                                                    <a class="product__items--action__btn" href="{{ route('add.to.wishlist', $value['id']) }}">
+                                                                        <svg class="product__items--action__btn--svg" xmlns="http://www.w3.org/2000/svg" width="25.51" height="23.443" viewBox="0 0 512 512"><path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path></svg>
+                                                                        <span class="visually-hidden">Wishlist</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="product__items--action__list">
+                                                                    <a class="product__items--action__btn productview" href="javascript:void(0)">
+                                                                        <svg class="product__items--action__btn--svg" xmlns="http://www.w3.org/2000/svg" width="25.51" height="23.443" viewBox="0 0 512 512"><path d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path><circle cx="256" cy="256" r="80" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></circle></svg>
+                                                                        <span class="visually-hidden">Quick View</span>
+                                                                    </a>
+                                                                </li>
                                                             </ul>
                                                         </div>
+                                                    </div>
                                                     </div>
                                                 </div>
                                             @endforeach
@@ -277,25 +305,57 @@
                                     </div>
                                 </div>
                             </div>
+{{--                            <span>{{$product->currentPage()}}</span>--}}
+                            @php $n = $product->lastPage();@endphp
+{{--                            {{$n}}--}}
                             <div class="pagination__area bg__gray--color">
                                 <nav class="pagination">
                                     <ul class="pagination__wrapper d-flex align-items-center justify-content-center">
-                                        <li class="pagination__list">
-                                            <a href="javascript:void(0)" class="pagination__item--arrow  link ">
-                                                <svg xmlns="http://www.w3.org/2000/svg"  width="22.51" height="20.443" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292"/></svg>
-                                                <span class="visually-hidden">pagination arrow</span>
-                                            </a>
-                                        <li>
-                                        <li class="pagination__list"><span class="pagination__item pagination__item--current">1</span></li>
-                                        <li class="pagination__list"><a href="javascript:void(0)" class="pagination__item link">2</a></li>
-                                        <li class="pagination__list"><a href="javascript:void(0)" class="pagination__item link">3</a></li>
-                                        <li class="pagination__list"><a href="javascript:void(0)" class="pagination__item link">4</a></li>
-                                        <li class="pagination__list">
-                                            <a href="javascript:void(0)" class="pagination__item--arrow  link ">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="22.51" height="20.443" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M268 112l144 144-144 144M392 256H100"/></svg>
-                                                <span class="visually-hidden">pagination arrow</span>
-                                            </a>
-                                        <li>
+                                        @if($product->previousPageUrl() != '')
+                                            <li class="pagination__list">
+                                                <a href="{{$product->previousPageUrl()}}" class="pagination__item--arrow link ">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"  width="22.51" height="20.443" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292"/></svg>
+                                                    <span class="visually-hidden">pagination arrow</span>
+                                                </a>
+                                            <li>
+                                        @else
+                                            <li class="pagination__list">
+                                                <a href="javascript:void(0)" class="pagination__item--arrow link ">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"  width="22.51" height="20.443" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292"/></svg>
+                                                    <span class="visually-hidden">pagination arrow</span>
+                                                </a>
+                                            <li>
+                                        @endif
+                                        @for($i=1; $i<=$n; $i++)
+                                            @if($i == 1)
+                                                @if($product->previousPageUrl() != '')
+                                                    <li class="pagination__list"><a href="{{$product->previousPageUrl()}}" class="pagination__item link">{{$i}}</a></li>
+                                                @else
+                                                    <li class="pagination__list"><a href="javascript:void(0)" class="pagination__item pagination__item--current">{{$i}}</a></li>
+                                                @endif
+                                            @else
+                                                @if($product->nextPageUrl() != '')
+                                                    <li class="pagination__list"><a href="{{$product->nextPageUrl()}}" class="pagination__item link">{{$i}}</a></li>
+                                                @else
+                                                    <li class="pagination__list"><a href="javascript:void(0)" class="pagination__item pagination__item--current">{{$i}}</a></li>
+                                                @endif
+                                            @endif
+                                        @endfor
+                                        @if($product->nextPageUrl() != '')
+                                            <li class="pagination__list">
+                                                <a href="{{$product->nextPageUrl()}}" class="pagination__item--arrow  link ">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="22.51" height="20.443" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M268 112l144 144-144 144M392 256H100"/></svg>
+                                                    <span class="visually-hidden">pagination arrow</span>
+                                                </a>
+                                            <li>
+                                        @else
+                                            <li class="pagination__list">
+                                                <a href="javascript:void(0)" class="pagination__item--arrow  link ">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="22.51" height="20.443" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M268 112l144 144-144 144M392 256H100"/></svg>
+                                                    <span class="visually-hidden">pagination arrow</span>
+                                                </a>
+                                            <li>
+                                        @endif
                                     </ul>
                                 </nav>
                             </div>

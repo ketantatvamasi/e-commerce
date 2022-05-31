@@ -9,6 +9,7 @@ use App\Http\Controllers\frontend\CartController;
 use App\Http\Controllers\frontend\CheckoutController;
 use App\Http\Controllers\frontend\OrderListController;
 use App\Http\Controllers\frontend\ShopController;
+use App\Http\Controllers\frontend\WishlistController;
 
 use App\Http\Controllers\backend\AdminLoginController;
 use App\Http\Controllers\backend\CategoryController;
@@ -38,9 +39,14 @@ Auth::routes();
 
 Route::group(['middleware'=>'auth'],function() {
     Route::get('/dashboard', [DasboardController::class, 'index'])->name('dashboard');
-    Route::get('/wishlist', [DasboardController::class, 'wishlistView'])->name('wishlist');
+
 //    Route::get('/cart', [DasboardController::class, 'cartView'])->name('cartView');
 //    Route::get('/cart/{id}', [DasboardController::class, 'cartViewID']);
+    Route::get('/wishlist', [WishlistController::class, 'wishlistView'])->name('wishlist');
+    Route::get('add-to-wishlist/{id}', [WishlistController::class, 'wishlist'])->name('add.to.wishlist');
+    Route::delete('remove-from-wishlist', [WishlistController::class, 'remove'])->name('remove.from.wishlist');
+
+    Route::get('openModel', [WishlistController::class, 'openModel'])->name('openModel');
 
     //checkout route
     Route::get('/checkout', [CheckoutController::class, 'checkoutView'])->name('checkout');

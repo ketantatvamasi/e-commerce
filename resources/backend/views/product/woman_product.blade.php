@@ -36,7 +36,7 @@
                             <table id='ProductTable' style="font-size: 13px!important;" class="tabulator">
                                 <thead class="tabulator-header tabulator-headers">
                                 <tr>
-                                    <td>ID</td>
+{{--                                    <td>ID</td>--}}
                                     <td>Product name</td>
                                     <td>Decription</td>
                                     <td>MRP price</td>
@@ -69,10 +69,10 @@
                 serverSide: true,
                 ajax: "{{route('getWomanProduct')}}",
                 columns: [
-                    { "render": function(){
-                            return cnt++;
-                        }
-                    },
+                    // { "render": function(){
+                    //         return cnt++;
+                    //     }
+                    // },
                     { data: 'product_name', },
                     { data: 'decription' },
                     { data: 'mrp_price' },

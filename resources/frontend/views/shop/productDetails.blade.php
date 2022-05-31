@@ -4,7 +4,7 @@
     <main class="main__content_wrapper">
 
         <!-- Start product details section -->
-        <section class="product__details--section section--padding">
+        <section class="product__details--section section--padding product">
             <div class="container">
                 <div class="row row-cols-lg-2 row-cols-md-2">
                     @foreach($product as $value)
@@ -18,8 +18,8 @@
                                     @endphp
                                     @for($i=0; $i<$n; $i++)
                                         <div class="swiper-slide">
-                                            <div class="product__media--preview__items">
-                                                <a class="product__media--preview__items--link" data-gallery="product-media-preview" href="#"><img class="product__media--preview__items--img" src="{{asset('images/'.$img[$i])}}" alt="product-media-img"></a>
+                                          <div class="product__media--preview__items">
+                                               <a class="product__media--preview__items--link glightbox" data-gallery="product-media-preview" href="{{asset('images/'.$img[$i])}}"><img class="product__media--preview__items--img" src="{{asset('images/'.$img[$i])}}" alt="product-media-img"></a>
                                             </div>
                                         </div>
                                     @endfor
@@ -92,16 +92,22 @@
                                 </div>
                                     <p class="product__details--info__desc mb-15">{{$value->decription}}</p>
                                     <div class="product__variant">
-{{--                                    <div class="product__variant--list mb-10">--}}
-{{--                                        <fieldset class="variant__input--fieldset">--}}
+                                    <div class="product__variant--list mb-10">
+                                        <fieldset class="variant__input--fieldset">
 
-{{--                                            <legend class="product__variant--title mb-8">Color :</legend>--}}
-{{--                                            @for($i=0; $i<$n; $i++)--}}
-{{--                                                <input id="color-red1" name="color" type="radio" checked>--}}
-{{--                                                <label class="variant__color--value red" for="color-red1" title="Red"><img class="variant__color--value__img" src="{{asset('images/'.$img[$i])}}" alt="variant-color-img"></label>--}}
-{{--                                            @endfor--}}
-{{--                                        </fieldset>--}}
-{{--                                    </div>--}}
+                                            <legend class="product__variant--title mb-8">Color :</legend>
+                                            @for($i=0; $i<$n; $i++)
+                                                <input id="color-red1" name="color" type="radio" checked>
+                                                <label class="variant__color--value red" for="color-red1" title="Red"><img class="variant__color--value__img" src="{{asset('images/'.$img[$i])}}" alt="variant-color-img"></label>
+                                            @endfor
+                                        </fieldset>
+                                    </div>
+                                        <div class="quickview__info--ratting d-flex align-items-center mb-10">
+                                            <fieldset class="variant__input--fieldset weight">
+                                                <legend class="product__variant--title">Brand :</legend>
+                                            </fieldset>
+                                            <span class="quickview__info--review__text">{{$value->brand_name}}</span>
+                                        </div>
                                     <div class="product__variant--list mb-15">
                                         <fieldset class="variant__input--fieldset weight">
                                             <legend class="product__variant--title mb-8">Size :</legend>
@@ -112,22 +118,22 @@
                                         </fieldset>
                                     </div>
                                     <div class="product__variant--list quantity d-flex align-items-center mb-20">
-                                        <div class="quantity__box">
-                                            <button type="button" class="quantity__value quickview__value--quantity decrease" aria-label="quantity value" value="Decrease Value">-</button>
-                                            <label>
-                                                <input type="number" class="quantity__number quickview__value--number" value="1" />
-                                            </label>
-                                            <button type="button" class="quantity__value quickview__value--quantity increase" aria-label="quantity value" value="Increase Value">+</button>
-                                        </div>
+{{--                                        <div class="quantity__box">--}}
+{{--                                            <button type="button" class="quantity__value quickview__value--quantity decrease" aria-label="quantity value" value="Decrease Value">-</button>--}}
+{{--                                            <label>--}}
+{{--                                                <input type="number" class="quantity__number quickview__value--number" value="1" />--}}
+{{--                                            </label>--}}
+{{--                                            <button type="button" class="quantity__value quickview__value--quantity increase" aria-label="quantity value" value="Increase Value">+</button>--}}
+{{--                                        </div>--}}
                                         <a class="quickview__cart--btn primary__btn" href="{{ route('add.to.cart2', $value['id']) }}">Add to cart</span>
                                         </a>
                                     </div>
                                     <div class="product__variant--list mb-15">
-                                        <a class="variant__wishlist--icon mb-15" href="javascript:void(0)" title="Add to wishlist">
+                                        <a class="variant__wishlist--icon mb-15" href="{{ route('add.to.wishlist', $value['id']) }}" title="Add to wishlist">
                                             <svg class="quickview__variant--wishlist__svg" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512"><path d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"/></svg>
                                             Add to Wishlist
                                         </a>
-                                        <button class="variant__buy--now__btn primary__btn" type="submit">Buy it now</button>
+{{--                                        <button class="variant__buy--now__btn primary__btn" type="submit">Buy it now</button>--}}
                                     </div>
                                 </div>
                             </form>
@@ -140,7 +146,7 @@
         <!-- End product details section -->
 
         <!-- Start product details tab section -->
-        <section class="product__details--tab__section section--padding">
+        <section class="product__details--tab__section section--padding features" style="padding-bottom: 0!important;">
             <div class="container">
                 <div class="row row-cols-1">
                     <div class="col">
@@ -169,7 +175,15 @@
                 </div>
             </div>
         </section>
+        <section class="product__details--tab__section "style="padding-bottom: 2rem;">
+            <div class="container">
+                <div class="cart__section--inner">
+                    <div class="continue__shopping d-flex justify-content-between">
+                        <a class="continue__shopping--link" href="{{route('dashboard')}}">Continue shopping</a>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- End product details tab section -->
-
     </main>
 @endsection

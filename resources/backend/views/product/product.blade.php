@@ -36,7 +36,6 @@
                             <table id='empTable' style="font-size: 13px!important;" class="tabulator">
                                 <thead class="tabulator-header tabulator-headers">
                                     <tr>
-                                        <td>ID</td>
                                         <td>Product name</td>
                                         <td>Decription</td>
                                         <td>MRP price</td>
@@ -63,16 +62,12 @@
     <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
     <script>
     $(document).ready(function() {
-        var cnt = 1;
+        // var cnt = 1;
         $('#empTable').DataTable({
             processing: true,
             serverSide: true,
             ajax: "{{route('getproduct')}}",
             columns: [
-                { "render": function(){
-                        return cnt++;
-                    }
-                },
                 { data: 'product_name', },
                 { data: 'decription' },
                 { data: 'mrp_price' },
@@ -120,7 +115,6 @@
     function deleteRecord(id){
         // alert(id);
         var token = "{{ csrf_token() }}";
-
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -147,7 +141,6 @@
             }
         })
         // alert(token);
-
     }
     </script>
 @endpush

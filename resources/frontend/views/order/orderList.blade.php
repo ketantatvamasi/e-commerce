@@ -63,7 +63,7 @@
                                         <table id='orderListTable' style="font-size: 13px!important;" class="tabulator">
                                             <thead class="tabulator-header tabulator-headers">
                                             <tr>
-                                                <td class="account__table--header__child--items">ID</td>
+{{--                                                <td class="account__table--header__child--items">ID</td>--}}
                                                 <td class="account__table--header__child--items">Order ID</td>
                                                 <td class="account__table--header__child--items">Payment ID</td>
                                                 <td class="account__table--header__child--items">Product Name</td>
@@ -98,10 +98,10 @@
                 serverSide: true,
                 ajax: "{{route('getOrderList')}}",
                 columns: [
-                    { "render": function(){
-                            return cnt++;
-                        }
-                    },
+                    // { "render": function(){
+                    //         return cnt++;
+                    //     }
+                    // },
                     { data: 'order_id'},
                     { data: 'payment_id'},
                     { data: 'product_name'},

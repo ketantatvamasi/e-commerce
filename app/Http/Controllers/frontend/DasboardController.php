@@ -38,8 +38,9 @@ class DasboardController extends Controller
         $catArr = $this->getCat();
         $itemArr = $this->menuBar();
         $product = $this->getProduct();
+        $womanproduct = $this->getWomanProduct();
 //        dd($product);
-        return view('dashboard',compact('itemArr','catArr','product'));
+        return view('dashboard',compact('itemArr','catArr','product','womanproduct'));
     }
     public function getWomanProduct(){
 
@@ -56,6 +57,8 @@ class DasboardController extends Controller
             ->leftJoin("categories as c", "c.id", "=", "woman_products.category_id")
             ->leftJoin("categories as sc", "sc.id", "=", "woman_products.subcategory_id")
             ->leftJoin("woman_product_images as p", "p.product_id", "=", "woman_products.id")->groupby('woman_products.id')
+//            ->paginate(10);
+            ->limit(10)
             ->get();
         return $product;
     }
